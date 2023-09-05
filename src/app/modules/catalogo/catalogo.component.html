@@ -1,0 +1,13 @@
+<div class="grid grid-cols-3">
+  <div *ngFor="let oferta of ofertaService.ofertas">
+    <h1>
+      {{ oferta.name }}
+    </h1>
+    <span>
+      {{ oferta.description }}
+    </span>
+    <a [routerLink]="['/catalogo', oferta.id]">
+      <img src="{{ oferta.image }}" alt="" class="h-[15vh]" />
+    </a>
+  </div>
+</div>
