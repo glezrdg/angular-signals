@@ -11,26 +11,4 @@ import { HeaderComponent } from './shared/header/header.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'learning-angular';
-  firstName = signal('Jane');
-  lastName = signal('Doe');
-  fullName = computed(() => `${this.firstName()} ${this.lastName()}`);
-  count = signal(0);
-  count$ = toObservable(this.count);
-
-  ngOnInit() {
-    this.count$.subscribe({ complete: console.info });
-  }
-
-  constructor() {
-    effect(() => console.log('Name changed:', this.fullName()));
-  }
-
-  setName(newName: string) {
-    this.firstName.set(newName);
-  }
-  increment() {
-    this.count.update((c) => c + 1);
-  }
-}
+export class AppComponent {}

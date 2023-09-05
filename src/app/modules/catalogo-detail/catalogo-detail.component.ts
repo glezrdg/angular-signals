@@ -1,7 +1,7 @@
 import { Oferta } from './../../core/models/oferta.model';
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {  ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from 'src/app/services/ofertas.service';
 
 @Component({
@@ -19,7 +19,6 @@ export class CatalogoDetailComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.paramMap.get('id'));
     let id = this.route.snapshot.paramMap.get('id');
     this.ofertasService
       .getOfertaById(id!)
